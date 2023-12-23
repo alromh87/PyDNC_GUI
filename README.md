@@ -1,4 +1,4 @@
-Easily comunicate your CNC machine using PyDNC from a Graphical User Interface
+Easily comunicate your CNC machine using [PyDNC](http://www.saasgeophysics.org/pydnc/) from a Graphical User Interface
 
 PyDNC_GUI allows you to
 
@@ -8,7 +8,8 @@ PyDNC_GUI allows you to
 
 ### TODO
 	- [ ] Add translations
-	- [ ] Add Verification SUM
+	- [ ] Add verification SUM
 	- [ ] Test on Windows and OSX
 
-> [!TIP] Tested on Arch Linux x86 with USB to Serial adapter, please let me know if you have verified with other configurations
+> [!TIP]
+> Tested on Arch Linux x86 with USB to Serial adapter, please let me know if you have verified with other configurations

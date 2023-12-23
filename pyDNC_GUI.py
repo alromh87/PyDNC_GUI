@@ -277,7 +277,7 @@ class ConfigDialog(wx.Dialog):
 
         panel = wx.Panel(self)
 
-        sizerM = wx.GridBagSizer(4,5)
+        sizerM = wx.GridBagSizer(4,6)
         sb = wx.StaticBox(panel, label=_("Serial comunication"))
         boxsizer = wx.FlexGridSizer(4, 3, (70,1))
 
@@ -291,6 +291,7 @@ class ConfigDialog(wx.Dialog):
 
         text_pydnc = wx.StaticText(panel, label=_('PyDNC Location'))
         self.tc_pydnc = wx.TextCtrl(panel)
+        line = wx.StaticLine(panel)
         text_mach = wx.StaticText(panel, label=_('Machine'))
         self.ch_mach = wx.Choice(panel, choices=list(app.machines.keys()))
         text_port = wx.StaticText(sb, label=_('Port'))
@@ -339,17 +340,18 @@ class ConfigDialog(wx.Dialog):
         sizerM.Add(text_pydnc, pos=(0,0), flag=wx.ALL | wx.EXPAND| wx.ALIGN_CENTER_VERTICAL, border=5)
         sizerM.Add(self.tc_pydnc, pos=(0,1), span=(1,3), flag=wx.ALL | wx.EXPAND, border=5)
         sizerM.Add(self.btn_pydnc, pos=(0,4), flag=wx.ALL | wx.EXPAND, border=5)
-        sizerM.Add(text_mach, pos=(1,0), flag=wx.ALL | wx.EXPAND| wx.ALIGN_CENTER_VERTICAL, border=5)
-        sizerM.Add(self.ch_mach, pos=(1,1), span=(1,2), flag=wx.ALL | wx.EXPAND, border=5)
-        sizerM.Add(self.btn_add, pos=(1,3), flag=wx.ALL | wx.EXPAND, border=5)
-        sizerM.Add(self.btn_del, pos=(1,4), flag=wx.ALL | wx.EXPAND, border=5)
-        sizerM.Add(sb, pos=(2,0), span=(1,5), flag=wx.ALL | wx.EXPAND, border=5)
-        sizerM.Add(self.cb_enable_d2, pos=(3,0), span=(1,3), flag=wx.ALL | wx.EXPAND, border=5)
-        sizerM.Add(text_path, pos=(4,0), flag=wx.ALL | wx.EXPAND, border=5)
-        sizerM.Add(self.tc_path, pos=(4,1), span=(1,3), flag=wx.ALL | wx.EXPAND, border=5)
-        sizerM.Add(self.btn_dir, pos=(4,4), flag=wx.ALL | wx.EXPAND, border=5)
-        sizerM.Add(self.btn_acc, pos=(5,3), flag=wx.ALL | wx.EXPAND, border=5)
-        sizerM.Add(self.btn_canc, pos=(5,4), flag=wx.ALL | wx.EXPAND, border=5)
+        sizerM.Add(line, pos=(1, 0), span=(1, 5), flag=wx.EXPAND|wx.BOTTOM, border=10)
+        sizerM.Add(text_mach, pos=(2,0), flag=wx.ALL | wx.EXPAND| wx.ALIGN_CENTER_VERTICAL, border=5)
+        sizerM.Add(self.ch_mach, pos=(2,1), span=(1,2), flag=wx.ALL | wx.EXPAND, border=5)
+        sizerM.Add(self.btn_add, pos=(2,3), flag=wx.ALL | wx.EXPAND, border=5)
+        sizerM.Add(self.btn_del, pos=(2,4), flag=wx.ALL | wx.EXPAND, border=5)
+        sizerM.Add(sb, pos=(3,0), span=(1,5), flag=wx.ALL | wx.EXPAND, border=15)
+        sizerM.Add(self.cb_enable_d2, pos=(4,0), span=(1,3), flag=wx.ALL | wx.EXPAND, border=5)
+        sizerM.Add(text_path, pos=(5,0), flag=wx.ALL | wx.EXPAND, border=5)
+        sizerM.Add(self.tc_path, pos=(5,1), span=(1,3), flag=wx.ALL | wx.EXPAND, border=5)
+        sizerM.Add(self.btn_dir, pos=(5,4), flag=wx.ALL | wx.EXPAND, border=5)
+        sizerM.Add(self.btn_acc, pos=(6,3), flag=wx.ALL | wx.EXPAND, border=5)
+        sizerM.Add(self.btn_canc, pos=(6,4), flag=wx.ALL | wx.EXPAND, border=5)
 
         sb.SetSizer(boxsizer)
 
